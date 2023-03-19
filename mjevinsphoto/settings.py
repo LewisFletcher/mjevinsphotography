@@ -30,7 +30,7 @@ AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 AWS_STORAGE_BUCKET_NAME = 'mjevissphoto-media'
 
-DEBUG = False
+DEBUG = True
 
 INTERNAL_IPS = [
     "0.0.0.0",
@@ -38,7 +38,7 @@ INTERNAL_IPS = [
 
 ADMINS = [('lewis', 'lew.fletcher3@gmail.com')]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mjevinsphoto-production.up.railway.app', 'https://mjevinsphoto-production.up.railway.app', 'http://mjevinsphoto-production.up.railway.app']
 
 NPM_BIN_PATH = r'C:\Program Files\\nodejs\\npm.cmd'
 # Application definition
@@ -111,9 +111,9 @@ DATABASES = {
     }
 }
 
-CSRF_COOKIE_SECURE = True
 
-SESSION_COOKIE_SECURE = True
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -140,7 +140,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
