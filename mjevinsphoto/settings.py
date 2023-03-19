@@ -30,6 +30,12 @@ AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 AWS_STORAGE_BUCKET_NAME = 'mjevissphoto-media'
 
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_TRUSTED_ORIGINS = ['https://mjevinsphotography-production.up.railway.app']
+
 DEBUG = True
 
 INTERNAL_IPS = [
@@ -38,7 +44,7 @@ INTERNAL_IPS = [
 
 ADMINS = [('lewis', 'lew.fletcher3@gmail.com')]
 
-ALLOWED_HOSTS = ['mjevinsphoto-production.up.railway.app', 'https://mjevinsphoto-production.up.railway.app', 'http://mjevinsphoto-production.up.railway.app']
+ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app']
 
 NPM_BIN_PATH = r'C:\Program Files\\nodejs\\npm.cmd'
 # Application definition
