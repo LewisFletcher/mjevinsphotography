@@ -18,6 +18,7 @@ from django.urls import path, include
 import os
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,3 +33,11 @@ urlpatterns = [
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
+    path('favicon.ico', serve, {
+            'path': 'favicon.ico',
+            'document_root': os.path.join(BASE_DIR, 'static/favicon_io'),
+        }
+    ),
+]
