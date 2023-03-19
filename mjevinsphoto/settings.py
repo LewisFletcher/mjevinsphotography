@@ -61,10 +61,10 @@ INSTALLED_APPS = [
     "storages",
 
     # My Apps
-    'home',
-    'about',
-    'portfolio',
-    'packages',
+    'home.apps.HomeConfig',
+    'about.apps.AboutConfig',
+    'portfolio.apps.PortfolioConfig',
+    'packages.apps.PackagesConfig',
 ]
 
 MIDDLEWARE = [
