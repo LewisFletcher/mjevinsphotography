@@ -146,8 +146,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -174,7 +172,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
