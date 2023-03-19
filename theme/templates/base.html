@@ -1,0 +1,88 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>{% block sitetitle %}Mel Jevins Photograhy{% endblock %}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="Mel Jevins Photograhy">
+    	<meta name="author" content="Melissa Jevins">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Mel Jevins Photograhy">
+		<meta property="og:site_creator" content="Lewis Fletcher">
+		<meta property="og:url" content="#">
+		<meta property="og:description" content="{% block meta_description %}Mel Jevins Photograhy{% endblock %}">
+		<meta property="og:image" content="">
+		<meta name="twitter:site" content="">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:description" content="">
+		<meta name="twitter:url" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:image" content="">
+		<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat">
+		  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Dancing+Script">
+		<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+		<script src="https://unpkg.com/htmx.org@1.8.2"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	  	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+		{% block head %}
+		
+		{% endblock %}
+		{% tailwind_css %}
+	</head>
+
+	<body id="background_image" class="antialiased text-white font-montserrat leading-normal tracking-normal bg-[length:915px_660px] bg-repeat-y bg-center bg-top md:bg-cover md:w-full bg-mel-300" {% block background_style %}  {% endblock %}>
+		{% include 'navbar.html' %}
+		<span class="" id="hiddennav">
+			{% block sidebar %}
+			{% endblock %}
+				{% block content %}
+				{% endblock %}
+		<!-- Script for navbar -->
+		<script>
+			function toggle(hidden) {
+				var elem = document.getElementById("mobilenav")
+				var elem2 = document.getElementById("hiddennav")
+				var elem3 = document.getElementById("menubutton")
+				var elem4 = document.getElementById("background")
+				var elem5 = document.getElementById("background_image")
+				if (elem.classList.contains("hidden")) {
+					elem.classList.remove('hidden');
+					elem2.classList.add('hidden');
+					elem3.setAttribute('name', 'close');
+					elem4.setAttribute('style', "none")
+					elem5.setAttribute('style', "none")
+				} else {
+					elem.classList.add('hidden');
+					elem2.classList.remove('hidden')
+					elem3.setAttribute('name', 'menu');
+					elem4.setAttribute('style', "")
+					elem5.setAttribute('style', "")
+				}
+			}
+		</script>
+		<!-- Script for portfolio filter -->
+		  <footer>
+			<hr class="md:mt-8 md:pt-[5.5rem] border-none">
+			<div class="flex flex-wrap items-center md:justify-between justify-center fixed inset-x-0 bottom-0">
+				<div class="w-full md:w-4/12 px-4 mx-auto text-center">
+				  <div class="text-sm text-mel-400 font-semibold py-10">
+					© Mel Jevins Photography
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </footer>
+		</span>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<nav role="navigation" class="md:flex md:justify-between md:items-center p-1 text-white shadow-lg bg-mel-100 bg-opacity-70 w-full">
+    <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+            <img src="{% static 'theme/watermark_2.png' %}" class="inline h-16 w-auto pl-2 py-1" alt="Logo"/>
+        </a>
+        <button class="mobile-menu-button text-3xl cursor-pointer mx-2 md:hidden block" id="menu">
+            <ion-icon name="menu" id="menubutton" onclick="toggle(hidden)"></ion-icon>         
+        </button>
+    </div>
+    <div class="hidden md:block" id="mobilenav">
+        <ul id="background" class="w-full h-full flex flex-col md:flex-row items-center tex-white text-2xl md:text-base font-medium md:z-auto md:static absolute left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 bg-cover md:bg-none md:top-[-400px] transitional-all ease-in duration-500" style="">
+            <li class="mx-8 my-6 md:my-0 {% if request.path == '/' %}active:font-extrabold text-mel-400{% endif %}">
+            <a class="text-2xl" href="/">Home</a>            
+            </li>
+            <li class="mx-8 my-6 md:my-0 {% if 'about' in request.path  %}active:font-extrabold text-mel-400{% endif %}">
+                <a class="text-2xl" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="mx-8 my-6 md:my-0 {% if 'portfolio' in request.path %}active:font-extrabold text-mel-400{% endif %}">
+            <a class="text-2xl" href="{% url 'portfolio' %}">Portfolio</a>            
+            </li>
+            <li class="mx-8 my-6 md:my-0 {% if 'contact' in request.path %}active:font-extrabold text-mel-400{% endif %}">
+            <a class="text-2xl" href="mailto:melissajevins@gmail.com">Contact</a>            
+            </li>
+        </ul>
+    </div>
+    <span class="md:block hidden">
+        <a href="https://www.instagram.com/meljevinsphotography/" target="_blank" class="
+            text-mel-400
+            hover:text-mel-200
+            pl-3
+            py-2
+            pr-5
+            rounded-md
+            font-medium                
+        "><i class="fab fa-instagram"></i></a>
+    </span>
+</nav>

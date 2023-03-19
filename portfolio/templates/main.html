@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block background_style %}{% endblock %}
+{% block content %}
+<div class="flex flex-row justify-between content-center md:flex-nowrap flex-wrap mb-4">
+  {% for photo_type in photo_types %}
+    <div class="flex flex-col items-center content-center md:mt-8">
+      <a href="{% url 'type_view' photo_type.photo_type.pk %}"><h2 class='font-dancing text-4xl my-3 text-center font-semibold hover:text-mel-400 hover:underline transition-all duration-500'>{{ photo_type.photo_type.name }}</h2></a>
+      <div class="w-[95%]">
+        <img class="w-screen object-fill" src="{{ photo_type.photo.image.url }}">
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}
