@@ -44,7 +44,7 @@ INTERNAL_IPS = [
 
 ADMINS = [('lewis', 'lew.fletcher3@gmail.com')]
 
-ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app']
+ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app', 'meljevinsphotography.co.uk', 'http://meljevinsphotography.co.uk']
 
 NPM_BIN_PATH = r'C:\Program Files\\nodejs\\npm.cmd'
 # Application definition
