@@ -36,7 +36,7 @@ SESSION_COOKIE_SECURE = True
 
 CSRF_TRUSTED_ORIGINS = ['https://mjevinsphotography-production.up.railway.app']
 
-DEBUG = True
+DEBUG = False
 
 INTERNAL_IPS = [
     "0.0.0.0",
@@ -44,7 +44,7 @@ INTERNAL_IPS = [
 
 ADMINS = [('lewis', 'lew.fletcher3@gmail.com')]
 
-ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app', 'meljevinsphotography.co.uk', 'http://meljevinsphotography.co.uk']
+ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app', 'meljevinsphotography.co.uk', 'http://meljevinsphotography.co.uk', 'www.meljevinsphotography.co.uk', 'https://www.meljevinsphotography.co.uk']
 
 NPM_BIN_PATH = r'C:\Program Files\\nodejs\\npm.cmd'
 # Application definition
