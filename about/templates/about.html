@@ -25,3 +25,14 @@
         </div>
     </div>
 {% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        // Check if the screen width is less than or equal to 767px
+        if ($(window).width() <= 767) {
+            // Change the background image for smaller screens
+            $('#background_image').css('background-image', 'url({% static "about/callie_phone.jpg" %})');
+        }
+    });
+</script>
+{% endblock %}

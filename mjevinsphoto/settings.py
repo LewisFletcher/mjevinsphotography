@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     #'django_browser_reload',
     #"debug_toolbar",
     "storages",
-
+    
     # My Apps
     'home.apps.HomeConfig',
     'about.apps.AboutConfig',

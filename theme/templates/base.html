@@ -41,7 +41,7 @@
 		{% tailwind_css %}
 	</head>
 
-	<body id="background_image" class="antialiased text-white font-montserrat leading-normal tracking-normal bg-[length:915px_660px] bg-repeat-y bg-center bg-top md:bg-cover md:w-full bg-mel-300" {% block background_style %}  {% endblock %}>
+	<body id="background_image" class="text-white font-montserrat leading-normal tracking-normal bg-[length:540px_960px] bg-repeat-y md:bg-cover md:w-full bg-mel-300" {% block background_style %}  {% endblock %}>
 		{% include 'navbar.html' %}
 		<span class="" id="hiddennav">
 			{% block sidebar %}
@@ -72,6 +72,8 @@
 			}
 		</script>
 		<!-- Script for portfolio filter -->
+		{% block scripts %}
+		{% endblock %}
 		  <footer>
 			<hr class="md:mt-8 md:pt-[5.5rem] border-none">
 			<div class="flex flex-wrap items-center md:justify-between justify-center fixed inset-x-0 bottom-0">
