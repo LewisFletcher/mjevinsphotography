@@ -3,17 +3,17 @@
 {% block background_style %}{% endblock %}
 {% block content %}
 
-    <div class="h-screen bg-fixed bg-cover bg-center mb-[-40px] max-w-md md:max-w-none bg-image-1" style="background-image: url('{% static 'about/callie_1.JPG' %}'">
+    <div class="h-screen iphone-class bg-fixed bg-cover bg-center mb-[-40px] max-w-md md:max-w-none bg-image-1" style="background-image: url('{% static 'about/callie_1.JPG' %}'">
         <div class="w-full sm:w-full lg:w-8/12 px-4 sm:pr-2 lg:pr-4 md:text-center top-[50%] bottom-10 md:mx-auto">
             <span class="grid h-[85vh] place-items-center font-bold text-center md:text-[3rem] content-center text-white">
                 <h3 class="">Welcome to<br />
-                    Melissa Jevins Photography
+                    Mel Jevins Photography
                 </h3>
                 <iframe src="https://giphy.com/embed/hJl9v892gjwLEdHoZv" width="153" height="180" frameBorder="0" class="absolute bottom-0"></iframe>
             </span>
         </div>
     </div>
-    <div class="h-screen bg-fixed bg-cover bg-center md:mb-[-40px] max-w-md md:max-w-none bg-image-2" style="background-image: url('{% static 'about/bandits.JPG' %}'">
+    <div class="h-screen iphone-class bg-fixed bg-cover bg-center md:mb-[-40px] max-w-md md:max-w-none bg-image-2" style="background-image: url('{% static 'about/bandits.JPG' %}'">
         <div class="w-full sm:w-9/12 lg:w-8/12 px-4 sm:pr-2 lg:pr-4 md:mx-auto">
             <span class="grid h-[85vh] place-items-center font-bold md:text-[3rem] text-center content-center text-white">
                 <h3 class="mt-60 mb-40">Portraits (like my beautiful daughter above) <br />
@@ -23,7 +23,7 @@
             </span>
         </div>
     </div>
-    <div class="h-screen bg-fixed bg-cover bg-center md:mb-[-40px] max-w-md md:max-w-none bg-image-3" style="background-image: url('{% static 'about/farm.JPG' %}'">
+    <div class="h-screen iphone-class bg-fixed bg-cover bg-center md:mb-[-40px] max-w-md md:max-w-none bg-image-3" style="background-image: url('{% static 'about/farm.JPG' %}'">
         <div class="w-full sm:w-9/12 lg:w-8/12 px-4 sm:pr-2 lg:pr-4 md:mx-auto">
             <span class="grid h-[85vh] place-items-center font-bold md:text-[3rem] text-center content-center text-white">
                 <h3 class="mt-60 mb-20">Check out my portfolio<br />
@@ -41,8 +41,7 @@
 <script>
     $(document).ready(function() {
         function changeBackgroundForSmallScreens() {
-            if ($(window).width() <= 767) { // Check for screens smaller than 768px (usually mobile screens)
-                // Replace the background images for smaller screens
+            if ($(window).width() <= 767) {
                 $(".bg-image-1").css('background-image', 'url({% static "about/callie_homephone.jpg" %})');
                 $(".bg-image-2").css('background-image', 'url({% static "about/bandits_phone.jpg" %})');
                 $(".bg-image-3").css('background-image', 'url({% static "about/farm_phone.jpg" %})');
@@ -51,7 +50,7 @@
 
         changeBackgroundForSmallScreens();
 
-        $(window).resize(changeBackgroundForSmallScreens); // Adjust the background images when the browser window is resized
+        $(window).resize(changeBackgroundForSmallScreens);
         });
 </script>
 {% endblock %}
