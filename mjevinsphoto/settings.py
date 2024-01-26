@@ -156,7 +156,8 @@ DATABASES['default'].update(db_from_env)
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "static"
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://d2ep2kfwpl2a2s.cloudfront.net/'
+AWS_S3_CUSTOM_DOMAIN = 'd2ep2kfwpl2a2s.cloudfront.net'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_FILE_OVERWRITE = False
