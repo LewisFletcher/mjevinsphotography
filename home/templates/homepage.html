@@ -5,12 +5,16 @@
 
     <div class="h-screen bg-cover bg-center bg-local md:bg-fixed bg-contain bg-no-repeat md:bg-cover md:bg-center md:mb-[-40px] max-w-screen-sm md:max-w-none bg-image-1" style="background-image: url('{% static 'about/callie_1.JPG' %}?format=2500w'">
         <div class="w-full sm:w-9/12 lg:w-8/12 px-4 sm:pr-2 lg:pr-4 md:text-center top-[50%] bottom-10 md:mx-auto">
-            <span class="grid h-[69vh] md:h-[85vh] place-items-center font-bold text-center md:text-[3rem] content-center text-white">
-                <h3 class="">Welcome to<br />
+            <span class="grid h-[85vh] place-items-center font-bold text-center md:text-[3rem] content-center text-white grid-rows-5">
+                <h3 class="row-span-1 row-start-3">Welcome to<br />
                     Mel Jevins Photography
                 </h3>
-                <iframe src="https://giphy.com/embed/hJl9v892gjwLEdHoZv" width="153" height="180" frameBorder="0" class="absolute bottom-32 md:bottom-0 text-center"></iframe>
+                <div class="row-span-1 row-start-5 self-end" style="position: relative; width: 153px; height: 180px;">
+                    <iframe src="https://giphy.com/embed/hJl9v892gjwLEdHoZv" width="153" height="180" frameBorder="0" class=""></iframe>
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                </div>
             </span>
+            
         </div>
     </div>
     <div class="h-screen bg-cover bg-center bg-local md:bg-fixed bg-contain bg-no-repeat md:bg-cover md:bg-center md:mb-[-40px] max-w-screen-sm md:max-w-none bg-image-2" style="background-image: url('{% static 'about/bandits.JPG' %}'">
@@ -19,19 +23,27 @@
                 <h3 class="mt-60 mb-40">Portraits (like my beautiful daughter above) <br />
                     and sports shots are my specialty.
                 </h3>
-                <iframe src="https://giphy.com/embed/YPsO2ShzhUbH3CWxVl" width="153" height="180" frameBorder="0" class=""></iframe>
+                <div style="position: relative; width: 153px; height: 180px;">
+                    <iframe src="https://giphy.com/embed/YPsO2ShzhUbH3CWxVl" width="153" height="180" frameBorder="0" class=""></iframe>
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                  </div>
+                  
             </span>
         </div>
     </div>
-    <div class=":h-screen bg-cover bg-center bg-local md:bg-fixed bg-contain bg-no-repeat md:bg-cover md:bg-center md:mb-[-40px] max-w-screen-sm md:max-w-none bg-image-3" style="background-image: url('{% static 'about/farm.JPG' %}'">
+    <div class="h-screen bg-cover bg-center bg-local md:bg-fixed bg-contain bg-no-repeat md:bg-cover md:bg-center md:mb-[-40px] max-w-screen-sm md:max-w-none bg-image-3" style="background-image: url('{% static 'about/farm.JPG' %}'">
         <div class="w-full sm:w-9/12 lg:w-8/12 px-4 sm:pr-2 lg:pr-4 md:mx-auto">
             <span class="grid h-[69vh] md:h-[85vh] place-items-center font-bold md:text-[3rem] text-center content-center text-white">
                 <h3 class="mt-60 mb-20">Check out my portfolio<br />
                     and contact me to get your own photos.
                 </h3>
-                <div class="flex flex-row justify-between">
-                    <a href="{% url 'portfolio' %}"><button class="bg-mel-100 md:px-3 py-2 px-2 rounded-3xl text-2xl font-semibold md:mr-20 mr-5">Portfolio</button></a>
-                    <a href="{% url 'about' %}"><button class="bg-mel-100 md:px-3 py-2 px-2 rounded-3xl text-2xl font-semibold md:ml-20 ml-5">About</button></a>
+                <div class="flex flex-row justify-between space-x-20">
+                    <div>
+                        <a href="{% url 'portfolio' %}"><button class="bg-mel-100 md:px-3 py-2 px-2 rounded-3xl text-2xl font-semibold">Portfolio</button></a>
+                    </div>
+                    <div>
+                        <a href="{% url 'about' %}"><button class="bg-mel-100 md:px-3 py-2 px-2 rounded-3xl text-2xl font-semibold">About</button></a>
+                    </div>
                 </div>
             </span>
         </div>
@@ -53,5 +65,17 @@
         $(window).resize(changeBackgroundForSmallScreens);
         });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // Find the iframe by its source or another distinguishing feature
+      const giphyIframe = document.querySelector('iframe[src="https://giphy.com/embed/YPsO2ShzhUbH3CWxVl"]');
+      
+      if (giphyIframe) {
+        // Disable all pointer events to make it unclickable
+        giphyIframe.style.pointerEvents = 'none';
+      }
+    });
+  </script>
+  
 {% endblock %}
 ```
