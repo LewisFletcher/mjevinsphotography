@@ -17,6 +17,7 @@ class TypeView(ListView):
     template_name = 'type_view.html'
     context_object_name = 'photos'
     paginate_by = 9
+    ordering = ['-uploaded']
 
     def get_queryset(self):
         return Photo.objects.filter(photo_type=self.kwargs['pk'])
