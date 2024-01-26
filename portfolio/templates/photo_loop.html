@@ -1,0 +1,15 @@
+{% for photo in photos %}
+{% if photo.image %}
+    {% if not photo.landscape %}
+        <div class="overflow-hidden row-span-2 {% if photos.count > 9 %} {% if forloop.last %} hx-get="{{ url }}?page={{ page_obj.number|add:1 }}" hx-trigger="revealed" hx-swap="afterend" hx-target="this" {% endif %}{% endif %}">
+            <a href="{{ photo.image.url }}" class="image-link"><img src="{{ photo.image.url }}" class="w-full object-cover" alt="" data-mfp-src="{{ photo.image.url }}"></a>
+        </div>
+    {% else %}
+        <div class="overflow-hidden row-span-1 {% if photo_type.photo_type_set.all.count > 9 %} {% if forloop.last %} hx-get="{{ url }}?page={{ page_obj.number|add:1 }}" hx-trigger="revealed" hx-swap="afterend" hx-target="this" {% endif %}{% endif %}">
+            <a href="{{ photo.image.url }}" class="image-link"><img src="{{ photo.image.url }}" class="w-full object-cover" alt="" data-mfp-src="{{ photo.image.url }}"></a>
+        </div>
+    {% endif %}
+{% else %}
+{{photo.name}} is empty
+{% endif %}
+{% endfor %}

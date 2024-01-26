@@ -12,6 +12,7 @@ cookiecutter==2.1.1
 dj-database-url==1.2.0
 Django==4.1.7
 django-browser-reload==1.7.0
+django-htmx==1.17.2
 django-storages==1.13.2
 django-tailwind==3.5.0
 django_debug_toolbar==3.8.1

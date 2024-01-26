@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     #'django_browser_reload',
     #"debug_toolbar",
     "storages",
+    "django_htmx",
     
     # My Apps
     'home.apps.HomeConfig',

@@ -5,21 +5,7 @@
 <div class="flex flex-col items-center mx-auto pb-4 ">
     <h1 class="w-auto text-3xl my-4 font-bold">{{photo_type.name}}</h1>
     <div class="grid lg:grid-cols-2 xl:grid-cols-3 mx-auto w-3/4 mb-4 gap-x-1 gap-y-1 grid-flow-row-dense">
-        {% for photo in photo_type.photo_type_set.all %}
-        {% if photo.image %}
-            {% if not photo.landscape %}
-                <div class="overflow-hidden row-span-2">
-                    <a href="{{ photo.image.url }}" class="image-link"><img src="{{ photo.image.url }}" class="w-full object-cover" alt="" data-mfp-src="{{ photo.image.url }}"></a>
-                </div>
-            {% else %}
-                <div class="overflow-hidden row-span-1">
-                    <a href="{{ photo.image.url }}" class="image-link"><img src="{{ photo.image.url }}" class="w-full object-cover" alt="" data-mfp-src="{{ photo.image.url }}"></a>
-                </div>
-            {% endif %}
-        {% else %}
-        {{photo.name}} is empty
-        {% endif %}
-        {% endfor %}
+        {% include photo_loop.html %}
     </div>
 </div>
 <script>
