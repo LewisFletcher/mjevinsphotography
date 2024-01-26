@@ -28,11 +28,16 @@ urlpatterns = [
     #path('packages/', include('packages.urls')),
     path('portfolio/', include('portfolio.urls')),
     path('about/', include('about.urls')),
+    path('testimonials/', include('testimony.urls')),
 ]
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, 
+                          document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
     path('favicon.ico', serve, {

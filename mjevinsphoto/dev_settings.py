@@ -9,22 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'very-secret-key-123'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-
-AWS_STORAGE_BUCKET_NAME = 'mjevissphoto-media'
-
-CSRF_COOKIE_SECURE = True
-
-SESSION_COOKIE_SECURE = True
-
-CSRF_TRUSTED_ORIGINS = ['https://mjevinsphotography-production.up.railway.app', 'https://www.meljevinsphotography.co.uk']
-
-DEBUG = False
+DEBUG = True
 
 INTERNAL_IPS = [
     "0.0.0.0",
@@ -32,7 +19,7 @@ INTERNAL_IPS = [
 
 ADMINS = [('lewis', 'lew.fletcher3@gmail.com')]
 
-ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app', 'meljevinsphotography.co.uk', 'http://meljevinsphotography.co.uk', 'www.meljevinsphotography.co.uk', 'https://www.meljevinsphotography.co.uk']
+ALLOWED_HOSTS = []
 
 NPM_BIN_PATH = r'C:\Program Files\\nodejs\\npm.cmd'
 # Application definition
@@ -50,8 +37,8 @@ INSTALLED_APPS = [
     # Dependencies
     'tailwind',
     'theme',
-    #'django_browser_reload',
-    #"debug_toolbar",
+    'django_browser_reload',
+    "debug_toolbar",
     "storages",
     
     # My Apps
@@ -71,8 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #"django_browser_reload.middleware.BrowserReloadMiddleware",
-    #"debug_toolbar.middleware.DebugToolbarMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'mjevinsphoto.urls'
@@ -150,6 +137,9 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -158,9 +148,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "static"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
+STATICFILES_DIRS = [
+    BASE_DIR / "theme/static",
+]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
