@@ -24,7 +24,7 @@ SESSION_COOKIE_SECURE = True
 
 CSRF_TRUSTED_ORIGINS = ['https://mjevinsphotography-production.up.railway.app', 'https://www.meljevinsphotography.co.uk']
 
-DEBUG = False
+DEBUG = True
 
 INTERNAL_IPS = [
     "0.0.0.0",
