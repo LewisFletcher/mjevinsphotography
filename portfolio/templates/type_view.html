@@ -9,32 +9,33 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {
-        $('.image-link').magnificPopup({
-          type: 'image',
-          gallery: {
-            enabled: true
-          },
-          mainClass: 'mfp-with-zoom', // this class is for the zoom effect
-          zoom: {
-            enabled: true,
-            duration: 300, // duration of the zoom effect
-            easing: 'ease-in-out' // easing function to use for the zoom effect
-          }
-        });
-      
-        $('.image-link').click(function(e) {
-          e.preventDefault();
-          var url = $(this).data('mfp-src');
-          $.get($(this).attr('href'), function(data) {
+  function initializeMagnificPopup() {
+    $('.image-link').magnificPopup({
+        type: 'image',
+        gallery: { enabled: true },
+        mainClass: 'mfp-with-zoom',
+        zoom: { enabled: true, duration: 300, easing: 'ease-in-out' }
+    });
+
+    $('.image-link').click(function(e) {
+        e.preventDefault();
+        var url = $(this).data('mfp-src');
+        $.get($(this).attr('href'), function(data) {
             $.magnificPopup.open({
-              items: {
-                src: data.image_url
-              },
-              type: 'image'
+                items: { src: data.image_url },
+                type: 'image'
             });
-          }, 'json');
-        });
-      });
+        }, 'json');
+    });
+}
+
+$(document).ready(function() {
+    initializeMagnificPopup();
+});
+
+// Billy's fix: Reinitialize the fuckin' MagnificPopup after HTMX swaps in new content
+document.body.addEventListener('htmx:afterSwap', function() {
+    initializeMagnificPopup();
+});
 </script>
 {% endblock %}
