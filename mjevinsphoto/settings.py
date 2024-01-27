@@ -26,7 +26,7 @@ SECURE_SSL_REDIRECT = True
 
 CSRF_TRUSTED_ORIGINS = ['https://mjevinsphotography-production.up.railway.app', 'https://www.meljevinsphotography.co.uk']
 
-DEBUG = False
+DEBUG = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
