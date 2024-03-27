@@ -30,15 +30,22 @@ DEBUG = False
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-INTERNAL_IPS = [
-    "0.0.0.0",
-]
-
 ADMINS = [('lewis', 'lew.fletcher3@gmail.com')]
 
 ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app', 'meljevinsphotography.co.uk', 'http://meljevinsphotography.co.uk', 'www.meljevinsphotography.co.uk', 'https://www.meljevinsphotography.co.uk']
 
-NPM_BIN_PATH = r'C:\Program Files\\nodejs\\npm.cmd'
+SECURE_HSTS_SECONDS = 300
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_HSTS_PRELOAD = True
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+SECURE_BROWSER_XSS_FILTER = True
+
+X_FRAME_OPTIONS = 'DENY'
+
 # Application definition
 
 TAILWIND_APP_NAME = 'theme'
