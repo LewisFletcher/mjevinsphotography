@@ -24,7 +24,7 @@ SESSION_COOKIE_SECURE = True
 
 SECURE_SSL_REDIRECT = True
 
-CSRF_TRUSTED_ORIGINS = ['https://mjevinsphotography-production.up.railway.app', 'https://www.meljevinsphotography.co.uk']
+CSRF_TRUSTED_ORIGINS = ['https://meljevinsphotography.co.uk', 'https://www.meljevinsphotography.co.uk']
 
 DEBUG = False
 
@@ -32,7 +32,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ADMINS = [('lewis', 'lew.fletcher3@gmail.com')]
 
-ALLOWED_HOSTS = ['mjevinsphotography-production.up.railway.app', 'https://mjevinsphotography-production.up.railway.app', 'http://mjevinsphotography-production.up.railway.app', 'meljevinsphotography.co.uk', 'http://meljevinsphotography.co.uk', 'www.meljevinsphotography.co.uk', 'https://www.meljevinsphotography.co.uk']
+ALLOWED_HOSTS = ['.meljevinsphotography.co.uk',]
 
 SECURE_HSTS_SECONDS = 300
 
@@ -185,3 +185,32 @@ STORAGES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        },
+    },
+    'loggers': {
+        'django.security.DisallowedHost': {
+            'handlers': ['null'],
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['console', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
