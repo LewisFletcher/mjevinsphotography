@@ -194,11 +194,17 @@ LOGGING = {
             'class': 'logging.StreamHandler',
         },
     },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'level': 'ERROR',
-            'propagate': True,
+            'level': 'DEBUG',
+            'propagate': False,
         },
     },
 }
