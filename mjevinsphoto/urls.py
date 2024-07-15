@@ -21,7 +21,7 @@ from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('mel-admin/', admin.site.urls),
     #path('__debug__/', include('debug_toolbar.urls')),
     path('', include('home.urls')),
     #path('packages/', include('packages.urls')),

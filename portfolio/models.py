@@ -29,3 +29,22 @@ class CoverPhoto(models.Model):
 
     def __str__(self):
         return self.photo_type.name
+    
+class PrivatePhotoCategory(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True, help_text='Name of the category')
+    description = models.CharField(max_length=200, null=True, blank=True, help_text='Description of the category')
+    allowed_users = models.ManyToManyField('auth.User', related_name='allowed_users', blank=True, help_text='Users allowed to view this category')
+    url_slug = models.SlugField(max_length=50, unique=True, null=True, blank=True, help_text='URL slug for the category (this will be used in the URL to access the category)')
+
+    def __str__(self):
+        return "https://mjevinsphoto.com/portfolio/private/" + self.url_slug
+    
+class PrivatePhoto(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True, help_text='Name of the photo')
+    image = models.ImageField(blank=True, upload_to='images/', help_text='The photo')
+    uploaded = models.DateTimeField(auto_now=True)
+    category = models.ForeignKey(PrivatePhotoCategory, related_name='private_photos', on_delete=models.CASCADE)
+    landscape = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name

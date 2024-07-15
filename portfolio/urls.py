@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.MainView.as_view(), name='portfolio'),
     path('type/<int:pk>', views.TypeView.as_view(), name='type_view'),
     path('photo/<int:pk>', views.get_photo, name='photo'),
+    path('private/<slug:slug>', views.PrivatePhotoView.as_view(), name='private_photo'),
 ]
