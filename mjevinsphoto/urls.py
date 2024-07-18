@@ -28,6 +28,7 @@ urlpatterns = [
     path('portfolio/', include('portfolio.urls')),
     path('about/', include('about.urls')),
     path('testimonials/', include('testimony.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

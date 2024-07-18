@@ -37,7 +37,7 @@ class PrivatePhotoCategory(models.Model):
     url_slug = models.SlugField(max_length=50, unique=True, null=True, blank=True, help_text='URL slug for the category (this will be used in the URL to access the category)')
 
     def __str__(self):
-        return "https://mjevinsphoto.com/portfolio/private/" + self.url_slug
+        return "https://www.meljevinsphotography.co.uk/portfolio/private/" + self.url_slug
     
 class PrivatePhoto(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True, help_text='Name of the photo')

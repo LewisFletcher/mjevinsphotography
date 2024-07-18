@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
 
     # Dependencies
     'tailwind',
@@ -86,7 +88,12 @@ MIDDLEWARE = [
     "django_htmx.middleware.HtmxMiddleware",
     #"django_browser_reload.middleware.BrowserReloadMiddleware",
     #"debug_toolbar.middleware.DebugToolbarMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
+
+ACCOUNT_EMAIL_REQUIRED = False
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ROOT_URLCONF = 'mjevinsphoto.urls'
 
